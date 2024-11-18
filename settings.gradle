@@ -1,0 +1,5 @@
+rootProject.name = 'book-explorer'
+include 'module:core'
+include 'module:web-api'
+include 'module:persistence-adapter'
+include 'module:ui'

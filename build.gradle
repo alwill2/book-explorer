@@ -1,0 +1,45 @@
+plugins {
+    id 'application'
+    id 'org.springframework.boot' version '3.3.5'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+wrapper {
+    gradleVersion = '8.5'
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    SPRING_VERSION = '3.1.2'
+    LOMBOCK_VERSION = '1.18.36'
+}
+
+group = 'org.book.explorer'
+version = version ? version : 'latest'
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-autoconfigure'
+
+    implementation project(':module:core')
+    implementation project(':module:persistence-adapter')
+    implementation project(':module:web-api')
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${SPRING_VERSION}"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass = 'org.book.explorer.BookExplorerApplication'
+}

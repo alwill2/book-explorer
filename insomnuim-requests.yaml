@@ -1,0 +1,119 @@
+_type: export
+__export_format: 4
+__export_date: 2024-11-17T13:40:30.519Z
+__export_source: insomnia.desktop.app:v0.2.3-a
+resources:
+  - _id: req_c3339fffa1f042bbbfccb61a7869c8f5
+    parentId: wrk_7b8f57609deb4aae84d36838685ed7d4
+    modified: 1731849967632
+    created: 1731847186408
+    url: http://localhost:8080/authors
+    name: create Author
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Alex"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnium/0.2.3-a
+    authentication: {}
+    metaSortKey: -1731847186407
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    segmentParams: []
+    _type: request
+  - _id: wrk_7b8f57609deb4aae84d36838685ed7d4
+    parentId: null
+    modified: 1731847189408
+    created: 1731847189408
+    name: My Collection
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_981ac125cc5d431d9c60cd599ca6efaf
+    parentId: wrk_7b8f57609deb4aae84d36838685ed7d4
+    modified: 1731849964064
+    created: 1731848041619
+    url: http://localhost:8080/books
+    name: create Book
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"author": "Alex",
+        	"title": "Alex's Book"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnium/0.2.3-a
+    authentication: {}
+    metaSortKey: -1731847186357
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    segmentParams: []
+    _type: request
+  - _id: req_2ff3a4b2d4ae42bab10b65fee328f612
+    parentId: wrk_7b8f57609deb4aae84d36838685ed7d4
+    modified: 1731850381310
+    created: 1731850024675
+    url: http://localhost:8080/books
+    name: get Books
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnium/0.2.3-a
+        id: pair_722912ba85c94b09b88defbe4d6916ad
+    authentication: {}
+    metaSortKey: -1731847186307
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    segmentParams: []
+    _type: request
+  - _id: env_b95b9414b161487d990ff5669a9a625a
+    parentId: wrk_7b8f57609deb4aae84d36838685ed7d4
+    modified: 1731847188408
+    created: 1731847188408
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1731847188408
+    _type: environment
+  - _id: jar_fbacd1915ce649d9bb39a40cd6d1dde2
+    parentId: wrk_7b8f57609deb4aae84d36838685ed7d4
+    modified: 1731847189408
+    created: 1731847189408
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar

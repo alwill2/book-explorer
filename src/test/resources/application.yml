@@ -1,0 +1,21 @@
+spring:
+  main:
+    banner-mode: off
+
+  datasource:
+    url: jdbc:h2:mem:book-explorer
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  flyway:
+    locations: classpath:db/migrations
+    enabled: false
+
+logging:
+  level:
+    org.book.explorer: DEBUG
+    org.springframework.web.filter.CommonsRequestLoggingFilter: INFO
+    root: WARN

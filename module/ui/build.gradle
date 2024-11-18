@@ -1,0 +1,20 @@
+plugins {
+    id("com.github.node-gradle.node") version "7.0.1"
+}
+
+tasks.register('clean', Delete) {
+    delete "${project(':module:ui').projectDir.absolutePath}/build"
+}
+
+tasks.register('buildReactApp', NpmTask) {
+    dependsOn npmInstall
+    args = ['run', 'build', '--prod']
+    inputs.files('package.json', 'package-lock.json', 'tsconfig.json')
+    inputs.dir('src')
+    inputs.dir(fileTree("node_modules").exclude(".cache"))
+    outputs.dir('build')
+}
+
+node {
+    download = true
+}

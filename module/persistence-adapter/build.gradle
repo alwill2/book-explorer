@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+group = 'org.book.explorer.persistence'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':module:core')
+
+    implementation "org.projectlombok:lombok:${LOMBOCK_VERSION}"
+    annotationProcessor "org.projectlombok:lombok:${LOMBOCK_VERSION}"
+
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:${SPRING_VERSION}"
+    implementation 'mysql:mysql-connector-java:8.0.33'
+
+    implementation 'org.flywaydb:flyway-core:9.16.3'
+    implementation 'com.h2database:h2:2.2.224'
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+
+test {
+    useJUnitPlatform()
+}
